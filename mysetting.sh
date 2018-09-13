@@ -5,12 +5,14 @@ sudo rm -rf ~/.vim
 
 # make dirs
 mkdir -p ~/.vim
+mkdir -p ~/.ssh
 
 # install tools
 sudo apt install zsh vim tmux wget -y
 
 # set envs
 chsh -s /usr/bin/zsh
+ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 4096 -N ""
 
 # download files
 wget https://im-neko.net/files/.zshrc -O ~/.zshrc
