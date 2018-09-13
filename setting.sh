@@ -8,11 +8,13 @@ mkdir -p ~/.vim
 mkdir -p ~/.ssh
 
 # install tools
+sudo apt update -y
 sudo apt install zsh vim tmux wget -y
 
 # set envs
 chsh -s /usr/bin/zsh
-ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 4096 -N ""
+ssh-keygen -f keys/jwt.key -t rsa -b 4096 -N ""
+timedatectl set-timezone Asia/Tokyo
 
 # download files
 wget https://im-neko.net/files/.zshrc -O ~/.zshrc
