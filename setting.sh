@@ -13,7 +13,9 @@ sudo apt install zsh vim tmux wget -y
 
 # set envs
 chsh -s /usr/bin/zsh
-ssh-keygen -f keys/jwt.key -t rsa -b 4096 -N ""
+if [! -e ~/.ssh/id_rsa]; then
+  ssh-keygen -f ~/.ssh/jwt.key -t rsa -b 4096 -N ""
+fi
 timedatectl set-timezone Asia/Tokyo
 
 # download files
