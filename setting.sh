@@ -2,6 +2,7 @@
 sudo rm -rf ~/.zshrc
 sudo rm -rf ~/.vimrc
 sudo rm -rf ~/.vim
+sudo apt remove vim
 
 # make dirs
 mkdir -p ~/.vim
@@ -9,7 +10,10 @@ mkdir -p ~/.ssh
 
 # install tools
 sudo apt update -y
-sudo apt install zsh vim tmux wget -y
+sudo apt install zsh tmux wget -y
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
 
 # set envs
 chsh -s /usr/bin/zsh
