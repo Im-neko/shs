@@ -1,6 +1,3 @@
-# cd ~/
-cd
-
 # rm existed files
 sudo rm -rf ~/.zshrc
 sudo rm -rf ~/.vimrc
@@ -20,8 +17,8 @@ sudo apt install vim -y
 
 # set envs
 chsh -s /usr/bin/zsh
-if [! -e .ssh/id_rsa]; then
-  ssh-keygen -f ~/.ssh/jwt.key -t rsa -b 4096 -N ""
+if [ ! -e ~/.ssh/id_rsa ]; then
+  ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 4096 -N ""
 fi
 timedatectl set-timezone Asia/Tokyo
 
