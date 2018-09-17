@@ -3,6 +3,7 @@ echo "----- rm existed files"
 sudo rm -rf ~/.zshrc
 sudo rm -rf ~/.vimrc
 sudo rm -rf ~/.vim
+sudo rm -rf ~/.cache
 sudo apt remove vim -y
 
 # make dirs

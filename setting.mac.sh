@@ -2,18 +2,19 @@
 sudo rm -rf ~/.zshrc
 sudo rm -rf ~/.vimrc
 sudo rm -rf ~/.vim
+sudo rm -rf ~/.cache
 
 # make dirs
 mkdir -p ~/.vim
 mkdir -p ~/.ssh
 
 # install tools
-brew install wget
-brew install vim --with-override-system-vi
+sudo brew install wget
+sudo brew install vim --with-override-system-vi
 
 # set envs
-chsh -s /usr/bin/zsh
-if [! -e ~/.ssh/id_rsa]; then
+sudo chsh -s /usr/bin/zsh
+if [ ! -e ~/.ssh/id_rsa ]; then
   ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 4096 -N ""
 fi
 
