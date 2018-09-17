@@ -13,7 +13,7 @@ mkdir -p ~/.ssh
 # install tools
 echo "----- install tools"
 sudo apt update -y
-sudo apt install zsh tmux wget -y
+sudo apt install zsh tmux wget git -y
 echo "----- install vim"
 sudo add-apt-repository ppa:jonathonf/vim -y
 sudo apt update -y
@@ -22,7 +22,7 @@ sudo apt install vim -y
 # set envs
 echo "----- set envs"
 echo "----- set shell"
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh
 echo "---- make id_rsa"
 if [ ! -e ~/.ssh/id_rsa ]; then
   ssh-keygen -f ~/.ssh/id_rsa -t rsa -b 4096 -N ""
@@ -30,7 +30,7 @@ fi
 echo "----- set timezone"
 # 時間がうまく変更できない場合は次の行をアンコメントしてtimezone情報をインストール
 # sudo apt install tzdata
-timedatectl set-timezone Asia/Tokyo
+sudo timedatectl set-timezone Asia/Tokyo
 
 # download files
 echo "----- download files"
