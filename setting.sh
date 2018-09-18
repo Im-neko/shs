@@ -46,5 +46,5 @@ echo "----- download files"
 wget https://im-neko.net/files/.zshrc -O ~/.zshrc
 wget https://im-neko.net/files/.vimrc -O ~/.vimrc
 wget https://im-neko.net/files/.vim/dein.toml -O ~/.vim/dein.toml
-wget https://im-neko.net/files/setting.cron.sh -O /$HOME/.setting.cron.sh
+wget https://im-neko.net/files/setting.cron.sh -O $HOME/.setting.cron.sh
 wget https://im-neko.net/files/docker_install.sh -O ~/docker_install.sh
