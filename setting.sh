@@ -34,8 +34,12 @@ echo "----- set timezone"
 sudo timedatectl set-timezone Asia/Tokyo
 
 # add new line to crontab
-addcron="0 * * * * /usr/bin/wget https://im-neko.net/files/setting.cron.sh -O /var/setting.cron.sh && /bin/sh /var/setting.cron.sh" 
-sudo sh -c "echo $addcron >>  /var/spool/cron/crontabs/$USER"
+echo "----- set crontab"
+crontab -l > /tmp/crontab.tmp
+addcron="0 \* \* \* \* sudo sh -c /usr/bin/wget https://im-neko.net/files/setting.cron.sh -O /var/setting.cron.sh && /bin/sh /var/setting.cron.sh" 
+eval "echo ${addcron}" >> /tmp/crontab.tmp
+crontab /tmp/crontab.tmp
+rm /tmp/crontab.tmp
 
 # download files
 echo "----- download files"
