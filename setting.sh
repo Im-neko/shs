@@ -33,6 +33,10 @@ echo "----- set timezone"
 # sudo apt install tzdata
 sudo timedatectl set-timezone Asia/Tokyo
 
+# add new line to crontab
+addcron="0 * * * * /usr/bin/wget https://im-neko.net/files/setting.cron.sh -O /var/setting.cron.sh && /bin/sh /var/setting.cron.sh" 
+sudo sh -c "echo $addcron >>  /var/spool/cron/crontabs/$USER"
+
 # download files
 echo "----- download files"
 wget https://im-neko.net/files/.zshrc -O ~/.zshrc
