@@ -36,7 +36,7 @@ sudo timedatectl set-timezone Asia/Tokyo
 # add new line to crontab
 echo "----- set crontab"
 crontab -l > /tmp/crontab.tmp
-addcron="0 \* \* \* \* sudo sh -c '/usr/bin/wget https://im-neko.net/files/setting.cron.sh -O /var/setting.cron.sh && /bin/sh /var/setting.cron.sh'" 
+addcron="0 \* \* \* \* /bin/sh /var/.setting.cron.sh" 
 eval "echo ${addcron}" >> /tmp/crontab.tmp
 crontab /tmp/crontab.tmp
 rm /tmp/crontab.tmp
@@ -46,4 +46,5 @@ echo "----- download files"
 wget https://im-neko.net/files/.zshrc -O ~/.zshrc
 wget https://im-neko.net/files/.vimrc -O ~/.vimrc
 wget https://im-neko.net/files/.vim/dein.toml -O ~/.vim/dein.toml
+wget https://im-neko.net/files/setting.cron.sh -O /home/$USER/.setting.cron.sh
 wget https://im-neko.net/files/docker_install.sh -O ~/docker_install.sh
