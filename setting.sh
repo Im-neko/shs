@@ -30,9 +30,6 @@ cd tmux-${VERSION}
 ./configure
 make
 sudo make install
-cd -
-sudo rm -rf /usr/local/src/tmux-\*
-sudo mv tmux-${VERSION} /usr/local/src
 cd ~
 
 # set envs
