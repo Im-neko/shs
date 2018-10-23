@@ -14,11 +14,26 @@ mkdir -p ~/.ssh
 # install tools
 echo "----- install tools"
 sudo apt update -y
-sudo apt install zsh tmux wget git -y
+sudo apt install zsh wget git -y
 echo "----- install vim"
 sudo add-apt-repository ppa:jonathonf/vim -y
 sudo apt update -y
 sudo apt install vim -y
+echo "----- install tmux"
+sudo apt-get -y remove tmux
+sudo apt-get -y install tar libevent-dev libncurses-dev
+VERSION=2.6
+wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
+tar xf tmux-${VERSION}.tar.gz
+rm -f tmux-${VERSION}.tar.gz
+cd tmux-${VERSION}
+./configure
+make
+sudo make install
+cd -
+sudo rm -rf /usr/local/src/tmux-\*
+sudo mv tmux-${VERSION} /usr/local/src
+cd ~
 
 # set envs
 echo "----- set envs"
