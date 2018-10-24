@@ -20,4 +20,6 @@ sudo add-apt-repository \
 
 sudo apt update -y
 
-sudo apt install docker-ce docker-compose -y
+sudo apt install docker-ce -y
+
+curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose
